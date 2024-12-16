@@ -20,7 +20,7 @@ local TweenService = game:GetService("TweenService")
 
 
 local gradient = Instance.new("UIGradient")
-TweenService:Create(gradient,tweenInfoForGradient,{Rotation = 360})
+TweenService:Create(gradient,tweenInfoForGradient,{Rotation = 360}):Play()
 
 gradient.Color = ColorSequence.new(Color3.fromRGB(188, 188, 188), Color3.fromRGB(255, 255, 255))
 
