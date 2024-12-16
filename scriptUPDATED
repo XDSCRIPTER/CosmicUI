@@ -195,8 +195,8 @@ function a:Window(w)
 
     A.Name = "WindowLineGradient"
     A.Parent = z
-    local TweenForLine = TweenService:Create(A,tweenInfo2ForLine,{Offset = Vector2.new(0.5, 1)})
-    TweenForLine:Play()
+    TweenService:Create(A,tweenInfo2ForLine,{Offset = Vector2.new(0.5, 1)}):Play()
+
     A.Offset = Vector2.new(-0.5, 1)
     B.Name = "Header"
     B.Parent = y
