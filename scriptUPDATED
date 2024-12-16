@@ -106,6 +106,32 @@ b.UserInputService.InputBegan:Connect(
         end
     end
 )
+
+local tweenInfoForGradient = TweenInfo.new(
+    3, --//Duration of the tween
+    Enum.EasingStyle.Linear, --//Linear keeps constant speed
+    Enum.EasingDirection.InOut, --//EasingDirection is not of importance for linear
+    -1, --//Setting this to -1 will make the tween run infinitely until the tween is manually destroyed
+    false, --//If the tween loops. Setting this to true would 'un-twist' the gradient back to 0 before repeating
+    0 --//Zero second delay between the repeating tween
+)
+
+
+local gradient = Instance.new("UIGradient")
+local TweenForGradientFf = TweenService:Create(gradient,tweenInfoForGradient,{Rotation = 360})
+TweenForGradientFf:Play()
+gradient.Color = ColorSequence.new(Color3.fromRGB(188, 188, 188), Color3.fromRGB(255, 255, 255))
+
+
+local tweenInfo2ForLine = TweenInfo.new(
+    3, --//Duration of the tween
+    Enum.EasingStyle.Linear, --//Linear keeps constant speed
+    Enum.EasingDirection.InOut, --//EasingDirection is not of importance for linear
+    -1, --//Setting this to -1 will make the tween run infinitely until the tween is manually destroyed
+    true, --//If the tween loops. Setting this to true would 'un-twist' the gradient back to 0 before repeating
+    0 --//Zero second delay between the repeating tween
+)
+
 function a:Window(w)
     local x = false
     a.windowCount = a.windowCount + 1
@@ -123,23 +149,9 @@ function a:Window(w)
 
 
 
-    local tweenInfoForGradient = TweenInfo.new(
-        3, --//Duration of the tween
-        Enum.EasingStyle.Linear, --//Linear keeps constant speed
-        Enum.EasingDirection.InOut, --//EasingDirection is not of importance for linear
-        -1, --//Setting this to -1 will make the tween run infinitely until the tween is manually destroyed
-        false, --//If the tween loops. Setting this to true would 'un-twist' the gradient back to 0 before repeating
-        0 --//Zero second delay between the repeating tween
-    )
+  
 
-    local tweenInfo2ForLine = TweenInfo.new(
-        3, --//Duration of the tween
-        Enum.EasingStyle.Linear, --//Linear keeps constant speed
-        Enum.EasingDirection.InOut, --//EasingDirection is not of importance for linear
-        -1, --//Setting this to -1 will make the tween run infinitely until the tween is manually destroyed
-        true, --//If the tween loops. Setting this to true would 'un-twist' the gradient back to 0 before repeating
-        0 --//Zero second delay between the repeating tween
-    )
+  
 
     y.Name = "Top"
     y.Parent = t
@@ -148,11 +160,10 @@ function a:Window(w)
     y.Position = UDim2.new(0, 25, 0, -30 + 36 * a.windowCount + 6 * a.windowCount)
     y.Size = UDim2.new(0, 212, 0, 36)
    
-    local gradient = Instance.new("UIGradient")
-	gradient.Color = ColorSequence.new(Color3.fromRGB(188, 188, 188), Color3.fromRGB(255, 255, 255))
+  
+	
     gradient.Parent = y
-    local TweenForGradientFf = TweenService:Create(gradient,tweenInfoForGradient,{Rotation = 360})
-    TweenForGradientFf:Play()
+
 
     Drag(y)
     z.Name = "WindowLine"
