@@ -16,10 +16,12 @@ local tweenInfo2ForLine = TweenInfo.new(
     0 --//Zero second delay between the repeating tween
 )
 
+local TweenService = game:GetService("TweenService")
+
 
 local gradient = Instance.new("UIGradient")
-local TweenForGradientFf = TweenService:Create(gradient,tweenInfoForGradient,{Rotation = 360})
-TweenForGradientFf:Play()
+TweenService:Create(gradient,tweenInfoForGradient,{Rotation = 360})
+
 gradient.Color = ColorSequence.new(Color3.fromRGB(188, 188, 188), Color3.fromRGB(255, 255, 255))
 
 local a = {windowCount = 0, flags = {}}
@@ -152,7 +154,7 @@ function a:Window(w)
     local F = Instance.new("UIListLayout")
     local G = Instance.new("Frame")
 
-    local TS = game:GetService("TweenService")
+
 
 
 
