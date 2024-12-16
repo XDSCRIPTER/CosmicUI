@@ -123,7 +123,7 @@ function a:Window(w)
 
 
 
-    local tweenInfo = TweenInfo.new(
+    local tweenInfoForGradient = TweenInfo.new(
         3, --//Duration of the tween
         Enum.EasingStyle.Linear, --//Linear keeps constant speed
         Enum.EasingDirection.InOut, --//EasingDirection is not of importance for linear
@@ -132,7 +132,7 @@ function a:Window(w)
         0 --//Zero second delay between the repeating tween
     )
 
-    local tweenInfo2 = TweenInfo.new(
+    local tweenInfo2ForLine = TweenInfo.new(
         3, --//Duration of the tween
         Enum.EasingStyle.Linear, --//Linear keeps constant speed
         Enum.EasingDirection.InOut, --//EasingDirection is not of importance for linear
@@ -151,8 +151,8 @@ function a:Window(w)
     local gradient = Instance.new("UIGradient")
 	gradient.Color = ColorSequence.new(Color3.fromRGB(188, 188, 188), Color3.fromRGB(255, 255, 255))
     gradient.Parent = y
-    local s = TS:Create(gradient,tweenInfo,{Rotation = 360})
-    s:Play()
+    local TweenForGradientFf = TweenService:Create(gradient,tweenInfoForGradient,{Rotation = 360})
+    TweenForGradientFf:Play()
 
     Drag(y)
     z.Name = "WindowLine"
@@ -177,7 +177,7 @@ function a:Window(w)
 
     A.Name = "WindowLineGradient"
     A.Parent = z
-    local TweenForLine = TS:Create(A,tweenInfo2,{Offset = Vector2.new(0.5, 1)})
+    local TweenForLine = TweenService:Create(A,tweenInfo2ForLine,{Offset = Vector2.new(0.5, 1)})
     TweenForLine:Play()
     A.Offset = Vector2.new(-0.5, 1)
     B.Name = "Header"
