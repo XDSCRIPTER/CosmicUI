@@ -18,11 +18,11 @@ local tweenInfo2ForLine = TweenInfo.new(
 
 local TweenService = game:GetService("TweenService")
 
-
+local gradientWork function(gradient)
 local gradient = Instance.new("UIGradient")
 TweenService:Create(gradient,tweenInfoForGradient,{Rotation = 360}):Play()
-
 gradient.Color = ColorSequence.new(Color3.fromRGB(188, 188, 188), Color3.fromRGB(255, 255, 255))
+end
 
 local a = {windowCount = 0, flags = {}}
 local b = {}
@@ -170,7 +170,7 @@ function a:Window(w)
     y.Size = UDim2.new(0, 212, 0, 36)
    
   
-	
+	gradientWork()
     gradient.Parent = y
 
 
