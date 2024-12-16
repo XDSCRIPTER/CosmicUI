@@ -164,6 +164,16 @@ function a:Window(w)
         ColorSequenceKeypoint.new(0.80, Color3.fromRGB(43, 43, 43)),
         ColorSequenceKeypoint.new(1.00, Color3.fromRGB(43, 43, 43))
     }
+
+    local tweenInfo2 = TweenInfo.new(
+        3, --//Duration of the tween
+        Enum.EasingStyle.Linear, --//Linear keeps constant speed
+        Enum.EasingDirection.InOut, --//EasingDirection is not of importance for linear
+        -1, --//Setting this to -1 will make the tween run infinitely until the tween is manually destroyed
+        true, --//If the tween loops. Setting this to true would 'un-twist' the gradient back to 0 before repeating
+        0 --//Zero second delay between the repeating tween
+    )
+
     A.Name = "WindowLineGradient"
     A.Parent = z
     local g = TS:Create(A,tweenInfo2,{Offset = Vector2.new(0.5, 1)})
