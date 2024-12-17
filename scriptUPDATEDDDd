@@ -300,17 +300,17 @@ function a:Window(w)
         return M
     end
 
-	function K:KeyBind(K)
-		local k = Instance.new("Frame")
-        k.Name = "KeybindFrame"
-		k.Parent = E
-		k.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-		k.BorderSizePixel = 1
-		k.Size = UDim2.new(0, 151,0, 94)
-        k.Position = UDim2.new(0.016, 0,0.491, 0)
+	function K:KeyBind(KB)
+		local kb = Instance.new("Frame")
+        kb.Name = "KeybindFrame"
+		kb.Parent = E
+		kb.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+		kb.BorderSizePixel = 1
+		kb.Size = UDim2.new(0, 151,0, 94)
+        kb.Position = UDim2.new(0.016, 0,0.491, 0)
 		local kLABEL = Instance.new("TextLabel")
 		kLABEL.Name = "KeyBindLabel"
-		kLABEL.Parent = k
+		kLABEL.Parent = kb
 		kLABEL.BackgroundColor3 = Color3.fromRGB(161, 144, 255)
 		kLABEL.BorderSizePixel = 1
 		kLABEL.Size = UDim2.new(0, 151,0, 31)
@@ -319,7 +319,7 @@ function a:Window(w)
 		kLABEL.Font = Enum.Font.SourceSans
 		kLABEL.TextSize = 14
 		kLABEL.TextXAlignment = Left
-        return k
+        return kb
 		return kLABEL
 	end
 
