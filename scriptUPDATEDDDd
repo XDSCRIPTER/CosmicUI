@@ -47,6 +47,7 @@ function Drag(i, j)
         j = i
     end
     local k
+	local KB
     local l
     local m
     local n
