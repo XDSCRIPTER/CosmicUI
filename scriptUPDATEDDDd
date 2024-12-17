@@ -283,6 +283,7 @@ function a:Window(w)
     F:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(J)
     C.MouseButton1Click:Connect(I)
     local K = {}
+
     function K:Label(L)
         local M = Instance.new("TextButton")
         M.Name = "Label"
@@ -298,6 +299,31 @@ function a:Window(w)
         M.TextSize = 14.000
         return M
     end
+
+	function K:KeyBind(K)
+		local k = Instance.new("Frame")
+        k.Name = "KeybindFrame"
+		k.Parent = E
+		k.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+		k.BorderSizePixel = 1
+		k.Size = UDim2.new(0, 151,0, 94)
+        k.Position = UDim2.new(0.016, 0,0.491, 0)
+		local kLABEL = Instance.new("TextLabel")
+		kLABEL.Name = "KeyBindLabel"
+		kLABEL.Parent = k
+		kLABEL.BackgroundColor3 = Color3.fromRGB(161, 144, 255)
+		kLABEL.BorderSizePixel = 1
+		kLABEL.Size = UDim2.new(0, 151,0, 31)
+		kLABEL.Position = UDim2.new(0, 0,-0.272, 0)
+		kLABEL.Text = "    Keybinds list"
+		kLABEL.Font = Enum.Font.SourceSans
+		kLABEL.TextSize = 14
+		kLABEL.TextXAlignment = Left
+
+	end
+
+
+
     function K:Button(L, N)
         local O = Instance.new("Frame")
         local P = Instance.new("TextButton")
