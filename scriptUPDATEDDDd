@@ -319,7 +319,8 @@ function a:Window(w)
 		kLABEL.Font = Enum.Font.SourceSans
 		kLABEL.TextSize = 14
 		kLABEL.TextXAlignment = Left
-
+        return k
+		return kLABEL
 	end
 
 
