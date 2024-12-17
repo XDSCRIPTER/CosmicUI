@@ -19,10 +19,7 @@ local tweenInfo2ForLine = TweenInfo.new(
 local TweenService = game:GetService("TweenService")
 
 
-local gradient = Instance.new("UIGradient")
-TweenService:Create(gradient,tweenInfoForGradient,{Rotation = 360}):Play()
 
-gradient.Color = ColorSequence.new(Color3.fromRGB(188, 188, 188), Color3.fromRGB(255, 255, 255))
 
 local a = {windowCount = 0, flags = {}}
 local b = {}
@@ -161,7 +158,10 @@ function a:Window(w)
 
   
 
-  
+	local gradient = Instance.new("UIGradient")
+	TweenService:Create(gradient,tweenInfoForGradient,{Rotation = 360}):Play()
+	
+	gradient.Color = ColorSequence.new(Color3.fromRGB(188, 188, 188), Color3.fromRGB(255, 255, 255))
 
     y.Name = "Top"
     y.Parent = t
@@ -300,29 +300,6 @@ function a:Window(w)
         M.TextSize = 14.000
         return M
     end
-
-	function K:KeyBind(KB)
-		local kb = Instance.new("Frame")
-        kb.Name = "KeybindFrame"
-		kb.Parent = E
-		kb.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-		kb.BorderSizePixel = 1
-		kb.Size = UDim2.new(0, 151,0, 94)
-        kb.Position = UDim2.new(0.016, 0,0.491, 0)
-		local kLABEL = Instance.new("TextLabel")
-		kLABEL.Name = "KeyBindLabel"
-		kLABEL.Parent = kb
-		kLABEL.BackgroundColor3 = Color3.fromRGB(161, 144, 255)
-		kLABEL.BorderSizePixel = 1
-		kLABEL.Size = UDim2.new(0, 151,0, 31)
-		kLABEL.Position = UDim2.new(0, 0,-0.272, 0)
-		kLABEL.Text = "    Keybinds list"
-		kLABEL.Font = Enum.Font.SourceSans
-		kLABEL.TextSize = 14
-		kLABEL.TextXAlignment = Left
-        return kb
-		return kLABEL
-	end
 
 
 
