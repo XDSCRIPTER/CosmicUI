@@ -167,7 +167,7 @@ function a:Window(w)
     y.Parent = t
     y.BackgroundColor3 = Color3.fromRGB(138, 105, 255)
     y.BorderSizePixel = 0
-    y.Position = UDim2.new(0, 25 + 200 * a.windowCount + 50 * a.windowCount, 0, -30)
+    y.Position = UDim2.new(0, 0 + 200 * a.windowCount + 50 * a.windowCount, 0, -30)
     y.Size = UDim2.new(0, 212, 0, 36)
    
   
